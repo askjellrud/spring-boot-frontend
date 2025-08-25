@@ -7,7 +7,7 @@ type Props = {
 const NewTask = ({ newTaskCreated } : Props) => {
     const [title, setTitle] = useState("");
 
-    const createTask = async (title: string) => {
+    const createTask = async () => {
         try {
             const response = await fetch("http://localhost:8080/tasks", {
                 method: "POST",
@@ -30,7 +30,7 @@ const NewTask = ({ newTaskCreated } : Props) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        createTask(title.trim());
+        createTask();
     };
 
     return (
