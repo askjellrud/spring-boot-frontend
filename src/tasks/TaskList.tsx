@@ -1,12 +1,7 @@
 import {useEffect, useState} from "react";
+import TaskRow, {type Task} from "./TaskRow.tsx";
 
-interface Task {
-    id: number;
-    title: string;
-    completed: boolean;
-}
-
-const Tasks = () => {
+const TaskList = () => {
 
     const [tasks, setTasks] = useState<Task[]>([]);
 
@@ -25,15 +20,11 @@ const Tasks = () => {
 
     return (
         <>
-            {(
-                tasks.map(task => (
-                    <div key={task.id}>
-                        <strong>{task.title}</strong> - {task.completed ? 'Completed' : 'Pending'}
-                    </div>
-                ))
-            )}
+            {tasks.map(task => (
+                <TaskRow key={task.id} task={task}/>
+            ))}
         </>
-    )
+    );
 }
 
-export default Tasks
+export default TaskList

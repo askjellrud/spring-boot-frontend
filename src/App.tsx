@@ -1,12 +1,12 @@
 import './App.css'
-import Tasks from "./tasks/Tasks.tsx";
+import TaskList from "./tasks/TaskList.tsx";
 
 const App = () => {
 
     return (
         <>
             <h1>Tasks</h1>
-            <Tasks />
+            <TaskList />
         </>
     )
 }
