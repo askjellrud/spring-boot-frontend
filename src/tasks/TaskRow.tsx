@@ -8,18 +8,10 @@ type Props = {
     task: Task
 }
 
-const TaskRow = ({task}: Props) => {
-
-    return (
-        <>
-            {(
-                <div>
-                    <strong>{task.title}</strong> - {task.completed ? 'Completed' : 'Pending'}
-                </div>
-
-            )}
-        </>
-    )
-}
+const TaskRow = ({ task }: Props) => (
+    <div>
+        <strong>{task.title}</strong> - {task.completed ? 'Completed' : 'Pending'}
+    </div>
+);
 
 export default TaskRow

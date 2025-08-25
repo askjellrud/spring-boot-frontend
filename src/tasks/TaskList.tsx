@@ -6,22 +6,18 @@ const TaskList = () => {
     const [tasks, setTasks] = useState<Task[]>([]);
 
     useEffect(() => {
-        const fetchTasks = async () => {
-            const response = await fetch('http://localhost:8080/tasks');
-            if (!response.ok) {
-                throw new Error(`HTTP error!`);
-            }
-            const data: Task[] = await response.json();
-            setTasks(data);
-        };
-
-        fetchTasks();
+        fetch('http://localhost:8080/tasks')
+            .then(result => {
+                if (!result.ok) throw new Error('HTTP error!');
+                return result.json();
+            })
+            .then((data: Task[]) => setTasks(data));
     }, []);
 
     return (
         <>
             {tasks.map(task => (
-                <TaskRow key={task.id} task={task}/>
+                <TaskRow key={task.id} task={task} />
             ))}
         </>
     );
