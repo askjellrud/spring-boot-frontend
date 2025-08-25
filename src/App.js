@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/hello?age=44');
+        const response = await axios.get('http://localhost:8080/tasks');
         setData(response.data);
       } catch (error) {
         console.error('API error:', error);
