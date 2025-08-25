@@ -1,11 +1,9 @@
 import './App.css'
-import Applications from "./applications/Applications.tsx";
 
-function App() {
-
+const App = () => {
     return (
         <>
-            <h1>Tasks</h1>
+            <h1>Tasks 2</h1>
         </>
     )
 }
